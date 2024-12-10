@@ -4,6 +4,7 @@ html {
 
 body {
   min-width: 375px;
+  background-color: black;
 }
 
 /* 調整字體大小 */
