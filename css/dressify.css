@@ -1,0 +1,38 @@
+html {
+  font-size: 12px;
+}
+
+body {
+  min-width: 375px;
+}
+
+/* 調整字體大小 */
+.text-xs {
+  font-size: 12px;
+}
+
+.text-s {
+  font-size: 14px;
+}
+
+.text-m {
+  font-size: 16px;
+}
+
+.text-l {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+header {
+  height: 50px;
+  background-color: #F8F9F3;
+}
+
+nav {
+  height: 55px;
+}
+
