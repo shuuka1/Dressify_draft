@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>修改會員資料</title>
+    <link rel="stylesheet" href="./css/dressify.css">
+    <style>
+        .input-container {
+            position: relative;
+        }
+
+        .checkEye {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .openEye {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+    </style>=
+</head>
+<body>
+    <div class="root">
+        <!-- header -->
+        <header class="navbar fixed-top" style="background-color: #ebe3e0;">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="img"><a href="./modify.html"><img src="./img/icon/setting.svg" width="30px"
+                            alt="setting"></a>
+                </div>
+                <span class="text-xl"><b>Dressify</b></span>
+                <div></div>
+            </div>
+        </header>
+        <!-- content -->
+        <div class="container-fluid content my-5">
+            <div class="container-fluid py-3 my-4" style="background-color: #F8F9F3;">
+                <!-- banner -->
+                <div class="container-fluid text-center">
+                    <p class="text-xl mb-0"><b>修改會員資料</b></p>
+                    <p class="text-xs">若您需要修改會員資料，請在以下頁面修改<span style="color: red;">*</span>為必填項目</p>
+                </div>
+                <!-- input section -->
+                <div class="my-4 text-s">
+                    <!-- Email -->
+                    <div class="mt-3">
+                        <label for="email" class="form-label">&nbsp;&nbsp;Email<span
+                                style="color: red;">*</span></label>
+                        <input type="email" class="form-control" id="userEmail" placeholder="請輸入郵件">
+                    </div>
+                    <!-- ID -->
+                    <div class="mt-3">
+                        <label for="userId" class="form-label">&nbsp;&nbsp;使用者名稱<span
+                                style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="userId" placeholder="請輸入使用者名稱">
+                    </div>
+                    <label for="userIdDescription" class="text-xs">&nbsp;&nbsp;包含英文字母（大小寫區分）、數字及特殊符號</label>
+                    <!-- Password -->
+                    <div class="mt-3">
+                        <label for="userPwd" class="form-label">&nbsp;&nbsp;密碼<span style="color: red;">*</span></label>
+                        <div class="input-container" style="position: relative;">
+                            <input type="password" class="form-control" id="userPwd" placeholder="請輸入密碼">
+                            <img src="./img/icon/eye_lash.svg" alt="" width="20px" id="checkEye" class="checkEye">
+                            <img src="./img/icon/eye.svg" alt="" width="20px" id="openEye" class="openEye">
+                        </div>
+                    </div>
+                    <label for="userPwdDescription" class="text-xs">&nbsp;&nbsp;至少8個字元，包含英文字母（大小寫區分）及數字</label>
+                    <!-- Birthday -->
+                    <div class="mt-3">
+                        <label for="userBirth" class="form-label">&nbsp;&nbsp;生日</label>
+                        <input type="date" class="form-control" id="userBirth">
+                    </div>
+                    <!-- Gender -->
+                    <div class="mt-3">
+                        <label for="userGender" class="form-label">性別</label>
+                        <div>
+                            <btn class="btn btn-sm rounded-pill mx-1"
+                                style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;"
+                                onclick="selectButton(this)">男性</btn>
+                            <btn class="btn btn-sm rounded-pill mx-1"
+                                style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;"
+                                onclick="selectButton(this)">女性</btn>
+                            <btn class="btn btn-sm rounded-pill mx-1"
+                                style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;"
+                                onclick="selectButton(this)">保密</btn>
+                        </div>
+                    </div>
+                    <!-- Height -->
+                    <div class="mt-3">
+                        <label for="userHeight" class="form-label">&nbsp;&nbsp;身高（cm）<span
+                                style="color: red;">*</span></label>
+                        <input type="number" class="form-control" id="userHeight">
+                    </div>
+                    <!-- Weight -->
+                    <div class="mt-3">
+                        <label for="userWeight" class="form-label">&nbsp;&nbsp;體重（kg）</label>
+                        <input type="text" class="form-control" id="userWeight">
+                    </div>
+                    <!-- Style preference -->
+                    <div class="mt-3">
+                        <label for="stylePreference" class="form-label">&nbsp;&nbsp;穿搭風格偏好<span
+                                style="color: red;">*</span></label>
+                        <div>
+                            <div class="text-m">
+                                <div class="btn-group">
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">簡約
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">休閒
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">運動
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">職場
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">學院
+                                    </btn>
+                                </div>
+                                <div class="btn-group">
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">優雅
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">街頭
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">搖滾
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">龐克
+                                    </btn>
+                                    <btn class="badge rounded-pill mx-1"
+                                        style="background-color: #E9E3DF; color:#3b3a38; border: 1px solid #3b3a38;">復古
+                                    </btn>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="mt-3">
+                        <label for="userAvatar" class="form-label">&nbsp;&nbsp;上傳頭貼</label>
+                        <div class="d-flex flex-nowrap align-items-evenly">
+                            <input type="file" class="form-control" id="userAvatar" accept="image/*">
+                            <img src="./img/icon/avatar.svg" alt="預覽圖片" width="30px" id="imagePreview">
+                        </div>
+                    </div>
+                </div>
+                <!-- button -->
+                <div>
+                    <button class="btn btn-dark w-100 py-2">註冊會員</button>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="nav navbar fixed-bottom justify-content-evenly align-items-center"
+            style="background-color: #ebe3e0;">
+            <div><a href=""><img src="./img/icon/closet.svg" alt="" width="30px"></a></div>
+            <div><a href=""><img src="./img/icon/instagram.svg" alt="" width="30px"></a></div>
+            <div><a href="./index.html"><img src="./img/icon/home.svg" alt="" width="30px"></a></div>
+            <div><a href="./modify.html"><img src="https://www.dummyimage.com/30x30/aad4e3/000.jpg&text=30*30" alt=""
+                        class="img rounded-circle" width="30px"></a></div>
+        </footer>
+    </div>
+</body>
+</html>
